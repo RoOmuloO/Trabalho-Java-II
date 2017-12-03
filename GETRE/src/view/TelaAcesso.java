@@ -153,6 +153,9 @@ public class TelaAcesso extends javax.swing.JDialog {
             } else {
                 JOptionPane.showMessageDialog(null, "Bem Vindo, " + user.getNome());
                 setVisible(false);
+                
+                TelaPrincipal tp = new TelaPrincipal();
+                tp.setVisible(true);
             }
             
         } catch (SQLException ex) {

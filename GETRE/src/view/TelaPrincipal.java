@@ -36,11 +36,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,21 +62,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        jButton1.setText("Acessar GETRE");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AcessarSistema(evt);
-            }
-        });
-
-        jButton2.setText("Usuario");
+        jButton2.setText("Acesso a Informacoes");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Usuario(evt);
             }
         });
 
-        jButton3.setText("Acompanhar Envio");
+        jButton3.setText("Verificar Tabela de Precos");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AcessarTabelaPreco(evt);
+            }
+        });
 
         jButton4.setText("Sair do Sistema");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -87,53 +83,40 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setText("Testar Conexao com o Banco");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TesteDeConexao(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(53, 53, 53))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
-                .addComponent(jButton5)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addGap(18, 18, 18)
+                .addGap(45, 45, 45)
                 .addComponent(jButton2)
                 .addGap(18, 18, 18)
                 .addComponent(jButton3)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
                 .addComponent(jButton4)
-                .addGap(0, 68, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void AcessarSistema(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcessarSistema
-        TelaAcesso ta = new TelaAcesso(null,true);
-        ta.setVisible(true);
-    }//GEN-LAST:event_AcessarSistema
 
     private void Usuario(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Usuario
         TelaUsuario tu = new TelaUsuario(null,true);
@@ -148,15 +131,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_sairDoSistema
 
-    private void TesteDeConexao(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TesteDeConexao
-        try {
-            Connection c = ConnectionFactory.getConnection();
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro Conectar Banco ");
-        } catch (ClassNotFoundException ex) {
-            JOptionPane.showMessageDialog(null, "Erro Driver ");
-        }
-            JOptionPane.showMessageDialog(null, "Conectou ");    }//GEN-LAST:event_TesteDeConexao
+    private void AcessarTabelaPreco(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcessarTabelaPreco
+        TelaTabelaDePrecos tdp = new TelaTabelaDePrecos(null, true);
+        tdp.setVisible(true);
+    }//GEN-LAST:event_AcessarTabelaPreco
 
     /**
      * @param args the command line arguments
@@ -195,11 +173,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
