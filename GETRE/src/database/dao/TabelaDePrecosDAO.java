@@ -35,7 +35,7 @@ public class TabelaDePrecosDAO {
             ArrayList<TabelaDePrecos> lista = new ArrayList<>();
             
             while(rs.next()){
-               TabelaDePrecos tdp = new TabelaDePrecos(rs.getInt("idvalores_distancias"),rs.getString("ponto_inicial"),rs.getString("ponto_final"),rs.getDouble("distancia"),rs.getDouble("valor_por_Km"),rs.getDouble("Valor_Total"), (TipoDePorte) rs.getObject("tipo_porte"));
+               TabelaDePrecos tdp = new TabelaDePrecos(rs.getInt("idvalores_distancias"),rs.getString("ponto_inicial"),rs.getString("ponto_final"),rs.getDouble("distancia"),rs.getDouble("valor_por_Km"),rs.getDouble("Valor_Total"),  rs.getString("tipo_porte"));
                lista.add(tdp);
             }
             

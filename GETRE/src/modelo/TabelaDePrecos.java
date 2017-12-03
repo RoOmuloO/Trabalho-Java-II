@@ -13,12 +13,12 @@ public class TabelaDePrecos {
     private int id;
     private String pontoInicial,pontoFinal;
     private double distancia, valorPorKm, valorTotal;
-    private TipoDePorte tipo;
+    private String tipo;
 
     public TabelaDePrecos() {
     }
 
-    public TabelaDePrecos(int id, String pontoInicial, String pontoFinal, double distancia, double valorPorKm, double valorTotal, TipoDePorte tipo) {
+    public TabelaDePrecos(int id, String pontoInicial, String pontoFinal, double distancia, double valorPorKm, double valorTotal, String tipo) {
         this.id = id;
         this.pontoInicial = pontoInicial;
         this.pontoFinal = pontoFinal;
@@ -76,11 +76,11 @@ public class TabelaDePrecos {
         this.valorTotal = valorTotal;
     }
 
-    public TipoDePorte getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(TipoDePorte tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 

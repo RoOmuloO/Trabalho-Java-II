@@ -15,10 +15,10 @@ public class Usuario {
     private int id;
     private String nome, login,senha;
     private Date dataUltimoAcesso;
-    private ETipoUsuario tipo;
+    private String tipo;
     
 
-    public Usuario(int id, String nome, String login, String senha, Date dataUltimoAcesso, ETipoUsuario tipo) {
+    public Usuario(int id, String nome, String login, String senha, Date dataUltimoAcesso, String tipo) {
         this.id = id;
         this.nome = nome;
         this.login = login;
@@ -70,11 +70,11 @@ public class Usuario {
         this.dataUltimoAcesso = dataUltimoAcesso;
     }
 
-    public ETipoUsuario getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(ETipoUsuario tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 }

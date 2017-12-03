@@ -139,7 +139,7 @@ public class TelaTabelaDePrecos extends javax.swing.JDialog {
             }
             
             for (TabelaDePrecos tdp : lista) {
-                String[] linha = {String.valueOf(tdp.getId()),String.valueOf(tdp.getTipo("tipo_porte")),tdp.getPontoInicial(),tdp.getPontoFinal(),String.valueOf(tdp.getDistancia()),String.valueOf(tdp.getValorPorKm()),String.valueOf(tdp.getValorTotal())};
+                String[] linha = {String.valueOf(tdp.getId()),String.valueOf(tdp.getTipo()),tdp.getPontoInicial(),tdp.getPontoFinal(),String.valueOf(tdp.getDistancia()),String.valueOf(tdp.getValorPorKm()),String.valueOf(tdp.getValorTotal())};
                 dftm.addRow(linha);
             }
             

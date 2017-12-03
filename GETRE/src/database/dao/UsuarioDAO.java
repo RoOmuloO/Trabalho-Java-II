@@ -75,12 +75,12 @@ Connection c = ConnectionFactory.getConnection();
     
     public Usuario buscarPeloLoginESenha(String login, String senha) throws SQLException, ClassNotFoundException {
         Connection c = ConnectionFactory.getConnection();
-        String sql = "select * from usuario where "
-                + "login = ? and senha = ?;";
+        String sql = "select * from usuario where login = ? and senha = ?;";
         PreparedStatement pst = c.prepareStatement(sql);
 
         pst.setString(1, login);
         pst.setString(2, senha);
+        
 
         ResultSet rs = pst.executeQuery();
         Usuario u = null;
@@ -88,7 +88,7 @@ Connection c = ConnectionFactory.getConnection();
             u = new Usuario(rs.getInt("idUsuario"), rs.getString("nome"),
                     rs.getString("login"), rs.getString("senha"),
                     null, 
-                    ETipoUsuario.valueOf(rs.getString("tipo_usuario")) );
+                    rs.getString("tipo_usuario"));
         }
         return u;
     }
