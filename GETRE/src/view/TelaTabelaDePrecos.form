@@ -93,13 +93,13 @@
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="7" rowCount="0">
-                <Column editable="true" title="Id" type="java.lang.Integer"/>
-                <Column editable="true" title="Tipo de Porte" type="java.lang.Object"/>
-                <Column editable="true" title="Ponto Inicial" type="java.lang.String"/>
-                <Column editable="true" title="Ponto Final" type="java.lang.Object"/>
-                <Column editable="true" title="Distancia" type="java.lang.Object"/>
-                <Column editable="true" title="Valor por Km" type="java.lang.Object"/>
-                <Column editable="true" title="Valor Total" type="java.lang.Object"/>
+                <Column editable="false" title="Id" type="java.lang.Integer"/>
+                <Column editable="false" title="Tipo de Porte" type="java.lang.Object"/>
+                <Column editable="false" title="Ponto Inicial" type="java.lang.String"/>
+                <Column editable="false" title="Ponto Final" type="java.lang.Object"/>
+                <Column editable="false" title="Distancia" type="java.lang.Object"/>
+                <Column editable="false" title="Valor por Km" type="java.lang.Object"/>
+                <Column editable="false" title="Valor Total" type="java.lang.Object"/>
               </Table>
             </Property>
           </Properties>

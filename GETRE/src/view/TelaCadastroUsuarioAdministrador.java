@@ -5,6 +5,14 @@
  */
 package view;
 
+import database.dao.AdministradorDAO;
+import database.dao.ClienteDAO;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import modelo.Administrador;
+import modelo.Cliente;
+import modelo.Pessoa;
+
 /**
  *
  * @author romul
@@ -45,6 +53,11 @@ public class TelaCadastroUsuarioAdministrador extends javax.swing.JDialog {
         jLabel3.setText("Sobrenome:");
 
         jButton1.setText("Gravar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Voltar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -137,6 +150,26 @@ public class TelaCadastroUsuarioAdministrador extends javax.swing.JDialog {
     private void jButton2voltar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2voltar
         dispose();
     }//GEN-LAST:event_jButton2voltar
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Pessoa administrador;
+        
+        administrador = new Cliente(0,jtfNome.getText(),jtfSobrenome.getText(),jtfCPF.getText());
+        
+        try {
+            
+             
+            new ClienteDAO().salvar((Cliente) administrador);
+            JOptionPane.showMessageDialog(null,"Salvo com Sucesso!!");
+            setVisible(false);
+            
+        } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null,"Erro ao Salvar!");
+            } catch (ClassNotFoundException ex) {
+                JOptionPane.showMessageDialog(null,"Erro Driver!");
+            }
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
