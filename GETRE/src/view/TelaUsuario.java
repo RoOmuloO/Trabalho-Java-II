@@ -245,14 +245,14 @@ public class TelaUsuario extends javax.swing.JDialog {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
          if (jtGrid.getSelectedRow() >= 0) {
             
-             Pessoa pes = lista.get(jtGrid.getSelectedRow());
+             Cliente pes = lista.get(jtGrid.getSelectedRow());
             
             if (JOptionPane.showConfirmDialog(null, "Deseja Apagar"
                     + " o "+pes.getNome()+"?",
                     "Confirme", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
                 
                 try {                    
-                    new AdministradorDAO().apagar((Administrador) pes);
+                    new ClienteDAO().apagar((Cliente) pes);
                     
                     preencheGrid(true);
                     
